@@ -30,5 +30,4 @@ migrate_working_dir/
 /build/
 /coverage/
 
-# Local assets (not checked in)
-/assets/
+/assets_note/

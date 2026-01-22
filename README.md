@@ -11,13 +11,16 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-![Bambook preview](./img/001.png)
+![Bambook preview](./assets/images/001.png)
+# Bambook
+## CJK Vertical Layout for Flutter | Flutter 垂直文字排版引擎
+Banbook is a Flutter engine for high-quality vertical typesetting. It offers an elegant layout alternative for CJK and the essential solution for Mongolian script, supporting vertical writing, tate-chu-yoko, kinsoku, and optical adjustments.
 
-Banbook is a Flutter text layout engine focused on high-quality CJK vertical
-typesetting, including support for vertical writing, tate-chu-yoko (縱中橫),
-kinsoku (避頭尾), and punctuation optical adjustments.
+Banbook 是一款針對 Flutter 的套件。可你提供您垂直排版能力，為 CJK 語種提供另一種選項(甚至在蒙古文中是唯一選項)。該文字排版引擎，支援垂直書寫、縱中橫、避頭尾與標點視覺修正等功能。
 
-Banbook 是一款針對 Flutter 的套件。可你提供您垂直排版能力，這在 CJK 與種中為可選項，在蒙古文中是唯一選項。該文字排版引擎，支援垂直書寫、縱中橫、避頭尾與標點視覺修正等功能。
+Banbook は、Flutter 向けの高度なテキストレイアウトエンジンです。CJK（中日韓）言語における高品質な縦書きを実現し、モンゴル語においては必須となる縦組み表示を完全にサポートします。縦中横、禁則処理、そして**句読点の視覚的調整（Optical Adjustment）**など、タイポグラフィの細部までこだわり抜いた垂直排版機能を提供します。
+
+Banbook은 Flutter를 위한 고품질 텍스트 레이아웃 엔진으로, CJK(한중일)의 정교한 세로쓰기 구현에 최적화되어 있습니다. CJK 언어에서는 선택적으로, 몽골어에서는 필수적인 세로 배판 기능을 제공합니다. 세로쓰기, 종중횡(tate-chu-yoko), 금칙 처리(kinsoku), 그리고 문장 부호 시각 보정 등 타이포그래피의 완성도를 높이는 강력한 기능을 지원합니다.
 
 ## Features
 
@@ -29,6 +32,9 @@ Banbook 是一款針對 Flutter 的套件。可你提供您垂直排版能力，
  - Supports Traditional Chinese, Simplified Chinese, Japanese, Korean, Vietnamese Han characters (Chữ Nôm), and Mongolian vertical script.  
 	支援：繁體中文、簡體中文、日文、韓文、越南文漢字（儒字）、以及蒙古文等直書排版需求。
  - Design inspired by **W3C Unicode Vertical Text Layout (UTR #50)** to reduce the learning cost for developers and align with existing standards.  
+
+
+
 
 ## Getting started
 
@@ -68,13 +74,13 @@ BambookText(
 | 參數名 (Parameter) | 型別 (Type) | 預設值 (Default) | 說明 (Description) |
 | ------------------ | ----------- | ---------------- | ------------------ |
 | `data` | `String` | **必填 / required** | 要顯示的文字內容。Text content to display. |
-| `style` | `TextStyle?` | `null` | 文字樣式。支援：`height`(行高)、`letterSpacing`(字元間距)、`fontSize`…等。與 Flutter `Text` 兼容。Text style, fully compatible with Flutter's `Text`. |
+| `style` | `TextStyle?` | `null` | 文字樣式。支援：`height`(行高)、`letterSpacing`(字元間距)、`fontSize`…等。與 Flutter `Text` 兼容。Text style, fully compatible with Flutter `Text`. |
 | `textAlign` | `BambookTextAlign` | `BambookTextAlign.top` | 垂直對齊方式：`top`, `center`, `bottom`, `justify`。Vertical alignment for each column. |
-| `direction` | `BambookTextDirection` | `BambookTextDirection.rtl` | 換行方向：`rtl` (由右往左，典型 CJK 習慣) 或 `ltr`。Line flow direction: right-to-left or left-to-right. |
+| `direction` | `BambookTextDirection` | `BambookTextDirection.rtl` | 換行方向：`rtl` (由右往左) 或 `ltr`。Line flow direction: right-to-left or left-to-right. |
 | `orientation` | `BambookTextOrientation` | `BambookTextOrientation.mixed` | 西文取向：`mixed` (橫躺) 或 `upright` (直立)。當搭配 `tateChuYoko` 時，可以讓 Latin 與數字以 TCY 橫排顯示。Western (Latin) orientation: mixed or upright. Works together with `tateChuYoko` for TCY. |
 | `language` | `BambookLanguage` | `BambookLanguage.tc` | 文種設定：`tc` (繁體中文，居中標點)，`sc`/`jp`/`kr` (簡中/日文/韓文，右上標點)。Language hint for punctuation positioning. |
 | `applyKinsoku` | `bool` | `true` | 是否開啟避頭尾功能（防止標點出現在行首）。Enable kinsoku rules to avoid punctuation at line head/tail. |
-| `punctuationFixMode` | `PunctuationFixMode` | `PunctuationFixMode.auto` | `auto`、`force`、`disable`。修正部分平台下 CJK 字體標點位置異常問題。iOS 若已有自訂字體，通常建議 `disable`。Controls optical adjustment for punctuation; may be tuned per platform. |
+| `punctuationFixMode` | `PunctuationFixMode` | `PunctuationFixMode.auto` | `auto`、`force`、`disable`。修正部分平台下 CJK 字體標點位置異常問題。若是 iOS 平台或已有自訂字體，通常建議 `disable`。</br>auto, force, disable. Resolves CJK punctuation positioning anomalies on certain platforms. For iOS or environments with custom fonts already applied, disable is generally recommended.|
 | `tateChuYoko` | `(bool, int)` | `(false, 0)` | 縱中橫。例：「25」、「US」等較短 Latin 或數字，可自動橫排。若設為 `(true, N)`，則長度 **小於等於 N** 的連續 Latin/數字會套用 TCY，在直排中以橫向顯示。Tate-chu-yoko configuration for short Latin/number chunks. |
 
 ## More Info / 其他資訊
@@ -84,7 +90,7 @@ BambookText(
 - Issues and feature requests are welcome via the project repository.  
 	如有問題回報或功能建議，歡迎在專案的 repository 中提出 issue。
 
-- For more information, please visit / 更多諮詢與最新消息，請訪問：https://l.twinty.pe/bambook
+- For more info, please visit / 更多請參閱：https://l.twinty.pe/bambook
 
 ## Roadmap / 展望
 
@@ -107,3 +113,9 @@ BambookText(
 
 - Due to the rich typographic traditions of CJK and related logographic scripts, actual usage conventions can vary significantly by region, language, and context. We do our best to cover common patterns, but the engine cannot guarantee 100% correctness in all cases. Please always review the output carefully, especially for educational materials for children, thx!  
 	東亞語系十分複雜，本專案致力於盡量貼近多數使用情境，但目前仍在持續改進中，無法保證在所有情況下皆正確。請您務必自行核對排版結果是否正確，特別是在涉及孩童教育等重要用途時。如您是語言或字體排印相關領域的專家，歡迎與我們聯繫提供建議與指正。
+
+
+## 使用案例 (Usage Example)
+
+![Bambook usage example](./assets/images/003.jpg)
+
