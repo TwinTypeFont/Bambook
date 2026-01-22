@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-![Bambook preview](./assets/images/001.png)
+![Bambook preview](https://image.twintype.co/images/001.png)
 # Bambook
 ## CJK Vertical Layout for Flutter | Flutter 垂直文字排版引擎
 Banbook is a Flutter engine for high-quality vertical typesetting. It offers an elegant layout alternative for CJK and the essential solution for Mongolian script, supporting vertical writing, tate-chu-yoko, kinsoku, and optical adjustments.
@@ -117,5 +117,5 @@ BambookText(
 
 ## 使用案例 (Usage Example)
 
-![Bambook usage example](./assets/images/003.jpg)
+![Bambook usage example](https://image.twintype.co/images/003.jpg)
 
