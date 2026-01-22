@@ -42,7 +42,7 @@ Add the dependency in your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-	bambook: ^0.0.1
+	bambook: ^0.0.3
 ```
 
 Then import the package:
@@ -101,8 +101,8 @@ BambookText(
 
 - This package is released under the **MIT License** and is developed and maintained by **TwinType Foundry**.  
 	本套件以 **MIT 授權條款** 發佈，由 **TwinType Foundry** 開發與維護。
-- For questions or business inquiries, please contact: **willy@twintype**.  
-	如有相關疑問或商務合作，請來信 **willy@twintype** 與我們聯繫。
+- For questions or business inquiries, please contact: **willy@twintype.co**.  
+	如有相關疑問或商務合作，請來信 **willy@twintype.co** 與我們聯繫。
 
 ## Fonts used for examples / 範例使用之字型
 
