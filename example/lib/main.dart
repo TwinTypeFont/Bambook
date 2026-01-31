@@ -19,14 +19,6 @@ class _BambookDemoState extends State<BambookDemo> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // supportedLocales: const [
-      //   Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: 'TW'),
-      // ],
-      // localizationsDelegates: const [
-      //   GlobalMaterialLocalizations.delegate,
-      //   GlobalWidgetsLocalizations.delegate,
-      //   GlobalCupertinoLocalizations.delegate,
-      // ],
       home: Scaffold(
         appBar: AppBar(title: const Text('Bambook 垂直排版測試')),
         body: LayoutBuilder(
@@ -56,19 +48,17 @@ class _BambookDemoState extends State<BambookDemo> {
                           fontSize: 22,
                           color: Color.fromARGB(255, 8, 19, 76),
                           fontFamily: 'LINESeed-TW_Rg',
-                          height: 1.2,
-                          /// 行高
-                          letterSpacing: 1.0,
-                          /// 字元間距
                         ),
 
                         textAlign: BambookTextAlign.justify, /// 文本對齊
                         language: BambookLanguage.tc, /// 文種模式，目前涉及標點樣式
                         direction:BambookTextDirection.rtl,
-                        orientation: BambookTextOrientation.mixed, /// Latin 處理模式
+                        orientation: BambookTextOrientation.mixed, /// latin處理模式
                         applyKinsoku: true, /// 避頭尾
                         tateChuYoko: (false, 0), /// 縱中橫
-                        punctuationFixMode:PunctuationFixMode.auto, /// CJK預設字體修正，如果您未自行安裝對應語言字型，建議開啟
+                        punctuationFixMode:PunctuationFixMode.auto, /// CJK預設字體修正，如果您未安裝對應語言字型，建議開啟
+                        lineSpacing: 24.0, /// 垂直行距
+                        letterSpacing: -10, /// 垂直字元間距
                       ),
                     ),
                   ),

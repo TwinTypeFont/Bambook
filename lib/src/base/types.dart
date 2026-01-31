@@ -1,4 +1,5 @@
 /// UTR #50 Orientation/Unicode 垂直取向屬性
+/// 具體請參閱：https://www.unicode.org/reports/tr50/tr50-15.html
 enum BambookOrientation {
   U,/// Upright/垂直直立
   

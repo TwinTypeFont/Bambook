@@ -1,10 +1,10 @@
 name: bambook
 description: "A Flutter package crafted for beautiful CJK vertical layouts. Whether you're working with Chinese, Japanese, or Korean, we make vertical typesetting feel like a breeze!"
-version: 0.0.2
+version: 0.0.4
 homepage: https://l.twinty.pe/bambook
 
 environment:
-  sdk: ^3.10.7
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:

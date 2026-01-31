@@ -69,7 +69,7 @@ class BambookText extends LeafRenderObjectWidget {
     if (effectiveStyle.locale == null) {
       if (language == BambookLanguage.tc) {
         effectiveStyle =
-            effectiveStyle.copyWith(locale: const Locale('zh', 'TW'));
+            effectiveStyle.copyWith(locale: const Locale('zh', 'Hant'));
       } else if (language == BambookLanguage.sc) {
         effectiveStyle =
             effectiveStyle.copyWith(locale: const Locale('zh', 'CN'));
